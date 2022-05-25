@@ -1,4 +1,5 @@
 let timerEl = document.getElementById('countdown');
+let questionIndex = 0;
 
 let QA = {
     question: "What does DOM mean?",
@@ -26,7 +27,7 @@ let QD = {
 
 let masterlist = [];
 
-masterlist.push(QA,QB,QC,QD);
+masterlist.push(QA, QB, QC, QD, QC);
 
 function renderQuestion(q) {
 
@@ -45,12 +46,13 @@ function renderQuestion(q) {
                 evalEl.textContent = "Correct!";       
             } else {
                 evalEl.textContent = "Wrong!";
-            } nextRender(QB)
+            } questionIndex++
+            renderQuestion(masterlist[questionIndex]);
         })
     });   
 }
 
-renderQuestion(QA);
+renderQuestion(masterlist[questionIndex]);
 
 function countdown() {
     let timeLeft = 75;
