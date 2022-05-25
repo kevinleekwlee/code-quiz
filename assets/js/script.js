@@ -25,9 +25,27 @@ let QD = {
     correct: 1
 };
 
+let QE = {
+    question: "What does md mean in an README.md?",
+    choices: ["MarkDown", "Mode", "Modern", "MoreDocument"],
+    correct: 0
+};
+
+let QF = {
+    question: "What does VS mean in VS Code?",
+    choices: ["Visual Screen", "Vortex Storm", "Visual Studio", "Vision Store"],
+    correct: 2
+};
+
+let QG = {
+    question: "What does API mean?",
+    choices: ["App Planning Interaction", "Auto Powerful Internet", "Application Programming Interface", "Apple Project Inc"],
+    correct: 2
+};
+
 let masterlist = [];
 
-masterlist.push(QA, QB, QC, QD, QC);
+masterlist.push(QA, QB, QC, QD, QE, QF, QG);
 
 function renderQuestion(q) {
 
