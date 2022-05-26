@@ -1,8 +1,12 @@
+/* Global selector determining the font family, background colour and box sizing. */
+
 * {
     font-family:Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     background-color: pink;
 }
+
+/* Determines positioning of the header elements. */
 
 header {
     display: flex;
@@ -11,9 +15,13 @@ header {
     margin:20px;
 }
 
+/* Center aligns the text in the main element. */
+
 main {
     text-align: center;
 }
+
+/* Aligns all the answer buttons to the center. */
 
 .buttons {
     display: flex;
@@ -21,6 +29,8 @@ main {
     align-items: center;
     margin: 1.5rem 0 2rem;
 }
+
+/* Determines the appearance of the answer buttons. */
 
 .choices {
     background-color: rgb(190, 190, 190);
@@ -33,7 +43,9 @@ main {
     margin: 0.5rem;
 }
 
-#start-button {
+/* Determines the appearace of the start game button and the end game button. Matches the answer buttons. */
+
+#game-button {
     color:black;
     background-color: rgb(190, 190, 190);
     text-align: center;
@@ -46,12 +58,22 @@ main {
     padding:7px;
 }
 
-.choices:hover, #start-button:hover {
+/* Adds styling behaviour when the mouse is hovering over these buttons. */
+
+.choices:hover, #game-button:hover {
     cursor: pointer;
     background-color: blueviolet;
     color:white;
 }
 
-.choices:active, #start-button:active {
+/* Adds styling behaviour when the mouse is clicking these buttons. */
+
+.choices:active, #game-button:active {
     background-color: goldenrod;
+}
+
+/* Aligns the contents in the footer. */
+
+footer {
+    text-align: center;
 }
