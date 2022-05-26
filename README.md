@@ -6,7 +6,7 @@ This repository contains a multiple choice quiz about coding. It features HTML, 
 
 ## Usage
 
-This website can be accessed at 
+This website can be accessed at https://kevinleekwlee.github.io/code-quiz/
 
 Below is a screenshot of the website. 
 
