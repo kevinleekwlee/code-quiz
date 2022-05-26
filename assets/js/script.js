@@ -1,4 +1,5 @@
 let timerEl = document.getElementById('countdown');
+let evalEl = document.getElementById('eval');
 let questionIndex = 0;
 
 let QA = {
@@ -47,6 +48,21 @@ let masterlist = [];
 
 masterlist.push(QA, QB, QC, QD, QE, QF, QG);
 
+function clickEvent(event){
+    var question = masterlist[questionIndex];
+    var correctAnswer = question.correct;
+    var selectedAnswer = event.target.dataset.index;
+
+    if(correctAnswer == selectedAnswer) {
+        evalEl.textContent = "Correct!";
+    } else {
+        evalEl.textContent = "Wrong!";
+    }
+
+    questionIndex++
+    renderQuestion(masterlist[questionIndex]);
+}
+
 function renderQuestion(q) {
 
     let questionEl = document.getElementById('question');
@@ -54,19 +70,12 @@ function renderQuestion(q) {
     questionEl.textContent = q.question;
 
     let choicesEl = document.querySelectorAll('.choices');
-    let evalEl = document.getElementById('eval');
     
     choicesEl.forEach(function(element,index){
         element.textContent = q.choices[index];
 
-        element.addEventListener('click',function(){
-            if(q.correct === index) {
-                evalEl.textContent = "Correct!";       
-            } else {
-                evalEl.textContent = "Wrong!";
-            } questionIndex++
-            renderQuestion(masterlist[questionIndex]);
-        })
+        element.removeEventListener('click',clickEvent);
+        element.addEventListener('click',clickEvent);
     });   
 }
 
